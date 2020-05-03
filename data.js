@@ -84,3 +84,5 @@ var movies = [
     rate: 7.9,
   },
 ];
+
+export { movies }
