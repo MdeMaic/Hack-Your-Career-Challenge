@@ -9,18 +9,60 @@
 
     <!--  Styles  -->
     <link rel="stylesheet" href="styles/index.css">
-</head>
+
+    
+  </head>
+
 
 <body>
-    <h1 id="main-title"><strong>Ironflix</strong></h1>
-      <nav id="nav-bar">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">News</a>
-        <a class="nav-link" href="#">Contact</a>
-        <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Author</a>
-        </nav>
-    <p id = "showmovies"></p>
+
+ 
+  <div id="myheader">
+      <h1 id="main-title"><strong>Ironflix</strong></h1>
+        <nav id="nav-bar">
+          <a class="nav-link" href="#top">Top movies</a>
+          <a class="nav-link" href="#ridley">Ridley Scott</a>
+          <a class="nav-link" href="#short">Out of time?</a>
+          <a class="nav-link" href="#sorted">Sorted by Year</a>
+          <a class="nav-link" href="#">Author</a>
+          </nav>
+      </div>
+    <!-- 
+    <nav class="myheader">
+      <div class="heading">
+      <span id="main-title"><strong>Ironflix</strong></span>
+      </div>
+      <ul id="nav-bar">
+          <li><a class="nav-link" href="#top">Top movies</a></li>
+          <li><a class="nav-link" href="#ridley">Ridley Scott</a></li>
+          <li><a class="nav-link" href="#short">Out of time?</a></li>
+          <li><a class="nav-link" href="#sorted">Sorted by Year</a></li>
+          <li><a class="nav-link" href="#">Author</a></li>
+      </ul>
+    </nav>
+  -->
+    <!--<div class="empty"></div>-->
+    <main>
+    <section id="top" class="block">
+      <h2 class="block-title">Top movies</h2>
+      <p id = "top-movies"></p>
+    </section>
+
+    <section id="ridley" class="block">
+      <h2 class="block-title">Ridley Scott</h2>
+      <p id = "ridley-movies"></p>
+    </section>
+
+    <section id="short" class="block">
+      <h2 class="block-title">Out of time?</h2>
+      <p id = "shortest-movie"></p>
+    </section>
+    
+    <section id="sorted" class="block">
+      <h2 class="block-title">Sorted by year</h2>
+      <p id = "sorted-movies"></p>
+    </section>
+    </main>
     <!--
 
     Wow! What do you want to build?

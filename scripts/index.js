@@ -5,6 +5,7 @@ var movies = [
     director: "Duncan Jones",
     duration: "97",
     rate: 7.9,
+    picture: "https://i.pinimg.com/564x/3f/ac/29/3fac29111e45a9426d96a159ac29436c.jpg",
   },
   {
     title: "2001: A Space Odyssey",
@@ -12,6 +13,7 @@ var movies = [
     director: "Stanley Kubrick",
     duration: "149",
     rate: 8.3,
+    picture: "https://i.pinimg.com/564x/84/3e/85/843e854ff99d107727a4dab92a2460aa.jpg"
   },
   {
     title: "Star Trek",
@@ -19,6 +21,7 @@ var movies = [
     director: "J.J. Abrams",
     duration: "127",
     rate: 7.9,
+    picture: "https://i.pinimg.com/564x/c8/9f/19/c89f1998eb3bbf4047607e048951487c.jpg"
   },
   {
     title: "Guardians of the Galaxy",
@@ -26,6 +29,7 @@ var movies = [
     director: "James Gunn",
     duration: "121",
     rate: 8.0,
+    picture: "https://i.pinimg.com/564x/ac/0a/7f/ac0a7f7095ab102e14fd60b2b8ed6137.jpg"
   },
   {
     title: "The Right Stuff",
@@ -33,6 +37,7 @@ var movies = [
     director: "Philip Kaufman",
     duration: "193",
     rate: 7.8,
+    picture: "https://i.pinimg.com/564x/a4/82/9e/a4829e7c5bb4c9058d39142d4e42fad1.jpg"
   },
   {
     title: "Interstellar",
@@ -40,6 +45,7 @@ var movies = [
     director: "Christopher Nolan",
     duration: "169",
     rate: 8.6,
+    picture: "https://i.pinimg.com/564x/ed/32/c2/ed32c2b6842593234e71dc91b6e9307d.jpg"
   },
   {
     title: "Solaris",
@@ -47,6 +53,7 @@ var movies = [
     director: "Andrei Tarkovsky",
     duration: "147",
     rate: 8.1,
+    picture: "https://i.pinimg.com/originals/f6/a4/2d/f6a42d692538a510c145191d5bd4a824.jpg"
   },
   {
     title: "Apollo 13",
@@ -54,6 +61,7 @@ var movies = [
     director: "Ron Howard",
     duration: "140",
     rate: 7.6,
+    picture: "https://i.pinimg.com/564x/90/0b/c8/900bc840a22f615fbf6c163095e046b5.jpg"
   },
   {
     title: "Alien",
@@ -61,6 +69,7 @@ var movies = [
     director: "Ridley Scott",
     duration: "117",
     rate: 8.4,
+    picture: "https://i.pinimg.com/564x/95/71/2e/95712e8351138c97374f84db96d32d68.jpg"
   },
   {
     title: "The Martian",
@@ -68,6 +77,7 @@ var movies = [
     director: "Ridley Scott",
     duration: "144",
     rate: 8.0,
+    picture: "https://i.pinimg.com/564x/3a/ca/ae/3acaae0273060c77bf55fbc1c8e2f458.jpg"
   },
   {
     title: "Gravity",
@@ -75,6 +85,7 @@ var movies = [
     director: "Alfonso Cuarón",
     duration: "91",
     rate: 7.8,
+    picture: "https://i.pinimg.com/564x/03/98/c5/0398c546349dce88b207a5313eb80919.jpg"
   },
   {
     title: "Star Wars: Episode VII - The Force Awakens",
@@ -82,6 +93,7 @@ var movies = [
     director: "J.J. Abrams",
     duration: "138",
     rate: 7.9,
+    picture: "https://i.pinimg.com/564x/70/c5/2e/70c52e479a9cf8c8b4f8e4429550ae36.jpg"
   },
 ];
 
@@ -158,21 +170,35 @@ sortedMovies.sort(function(a,b){
 
 console.log(sortedMovies);
 
+
+//Display
 function movieTemplate(lstMovies){
-  return `<div class="movie">
-    <div class="first-div">
-    <h2 class="title">${lstMovies.title}</h2>
-    <p class="who-where"> by ${lstMovies.director} in ${lstMovies.year}</p>
+  return `<div class="container">
+    <img src=${lstMovies.picture} class="image"></img>
+    <div class="overlay">
+    <h3 class="text title">${lstMovies.title}</h3>
+    <p class=" text who-when"> by ${lstMovies.director} in ${lstMovies.year}</p>
+    <p class="text rate">Rate ${lstMovies.rate}</p>
+    <p class="text duration"> ${lstMovies.duration} min</p>
     </div>
-    <div class="second-div>
-    <p class="rate">Rate ${lstMovies.rate}</p>
-    <p class="duration"> ${lstMovies.duration} min</p>
     </div>
-  </div>
   `;
 }
 
+//top movies
+document.getElementById("top-movies").innerHTML = `
+${bestMovies.map(movieTemplate).join("")}`
 
-document.getElementById("showmovies").innerHTML = `
-${sortedMovies.map(movieTemplate).join("")}
-`
+//Ridley Scott movies
+document.getElementById("ridley-movies").innerHTML = `
+${ridleyMovies.map(movieTemplate).join("")}`
+
+//Shortest movie
+document.getElementById("shortest-movie").innerHTML = `
+${movieTemplate(shortestMovie)}`
+
+//Sorted movies
+document.getElementById("sorted-movies").innerHTML = `
+${sortedMovies.map(movieTemplate).join("")}`
+
+
